@@ -2,12 +2,17 @@ package com.lambdaschool.ordersswagger.controllers;
 
 import com.lambdaschool.ordersswagger.models.Agent;
 import com.lambdaschool.ordersswagger.repositories.AgentRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(
+  value = "Agent Controller",
+  description = "Contains all /agents endpoints"
+)
 @RestController
 @RequestMapping(path = "agents", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AgentController {

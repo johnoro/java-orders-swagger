@@ -2,12 +2,17 @@ package com.lambdaschool.ordersswagger.controllers;
 
 import com.lambdaschool.ordersswagger.models.Order;
 import com.lambdaschool.ordersswagger.repositories.OrderRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(
+  value = "Order Controller",
+  description = "Contains all /orders endpoints"
+)
 @RestController
 @RequestMapping(path = "orders", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderController {

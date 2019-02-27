@@ -3,6 +3,7 @@ package com.lambdaschool.ordersswagger.controllers;
 import com.lambdaschool.ordersswagger.models.Customer;
 import com.lambdaschool.ordersswagger.models.Order;
 import com.lambdaschool.ordersswagger.repositories.CustomerRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Set;
 
+@Api(
+  value = "Customer Controller",
+  description = "Contains all /customers endpoints"
+)
 @RestController
 @RequestMapping(path = "customers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CustomerController {
