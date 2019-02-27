@@ -14,18 +14,14 @@ Create a REST api server to store and read data from the provided SQLite Databas
   * Add Swagger Documentation to your REST APIs
     * Add custom responses to each of the follow error conditions
     * Add custom Swagger Documentation to each of the follow End Points. The rest of the end points may just have the default documentation.
-      * GET /customers - returns all the customer
-      * GET /customers/custcode/{custcode}
-    * For a stretch goal - add custom responses to the rest of the end points
-  * Add flyway data migration
-  
+      - [ ] GET /customers - returns all the customer
+      - [ ] GET /customers/custcode/{custcode}
+    - [ ] For a stretch goal - add custom responses to the rest of the end points
+  - [x] Add flyway data migration
   
     * for this project we will just have the starting migration. The DDL for creating the tables can be found in the file tables.DDL
 
------------------------------------
-
-* The following is the old stuff!
-
+## OLD STUFF -- All finished.
 
 * Convert to using SQLite
 * Add additional end points
