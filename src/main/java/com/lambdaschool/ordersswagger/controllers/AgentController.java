@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-// @Timed
 @RequestMapping(path = "agents", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AgentController {
   @Autowired
   AgentRepository repository;
 
   @GetMapping("")
-  // @Timed(value = "all.agents", longTask = true)
   public List<Agent> all() {
     return repository.findAll();
   }
