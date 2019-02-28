@@ -20,7 +20,7 @@ public class CustomerController {
   @Autowired
   CustomerRepository repository;
 
-  @ApiOperation(value = "Lists all customers in a List format", response = List.class)
+  @ApiOperation(value = "Lists all customers or an empty list", response = List.class)
   @ApiResponses(value = {
     @ApiResponse(code = 200, message = "Successfully retrieved customers"),
     @ApiResponse(code = 401, message = "You are not authorized to view customers"),
@@ -33,6 +33,14 @@ public class CustomerController {
     return repository.findAll();
   }
 
+  @ApiOperation(value = "A customer by id or null", response = Customer.class)
+  @ApiResponses(value = {
+    @ApiResponse(code = 200, message = "Successfully retrieved customer by id"),
+    @ApiResponse(code = 401, message = "You are not authorized to view customer by id"),
+    @ApiResponse(code = 403, message = "Access to customer by id is forbidden"),
+    @ApiResponse(code = 404, message = "Customer by id was not found"),
+    @ApiResponse(code = 500, message = "Customer by id could not be retrieved")
+  })
   @GetMapping("{id}")
   public Customer oneById(@PathVariable Long id) {
     var found = repository.findById(id);
