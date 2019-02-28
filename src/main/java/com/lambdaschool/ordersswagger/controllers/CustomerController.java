@@ -3,7 +3,7 @@ package com.lambdaschool.ordersswagger.controllers;
 import com.lambdaschool.ordersswagger.models.Customer;
 import com.lambdaschool.ordersswagger.models.Order;
 import com.lambdaschool.ordersswagger.repositories.CustomerRepository;
-import io.swagger.annotations.Api;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Set;
 
 @Api(
-  value = "Customer Controller",
   description = "Contains all /customers endpoints"
 )
 @RestController
@@ -21,7 +20,14 @@ public class CustomerController {
   @Autowired
   CustomerRepository repository;
 
-  // comes with orders
+  @ApiOperation(value = "Lists all customers in a List format", response = List.class)
+  @ApiResponses(value = {
+    @ApiResponse(code = 200, message = "Successfully retrieved customers"),
+    @ApiResponse(code = 401, message = "You are not authorized to view customers"),
+    @ApiResponse(code = 403, message = "Access to customers is forbidden"),
+    @ApiResponse(code = 404, message = "Customers were not found"),
+    @ApiResponse(code = 500, message = "Customers could not be retrieved")
+  })
   @GetMapping("")
   public List<Customer> all() {
     return repository.findAll();

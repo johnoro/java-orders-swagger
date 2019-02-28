@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Api(
-  value = "Agent Controller",
   description = "Contains all /agents endpoints"
 )
 @RestController

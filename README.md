@@ -14,8 +14,8 @@ Create a REST api server to store and read data from the provided SQLite Databas
   * Add Swagger Documentation to your REST APIs
     * Add custom responses to each of the follow error conditions
     * Add custom Swagger Documentation to each of the follow End Points. The rest of the end points may just have the default documentation.
-      - [ ] GET /customers - returns all the customer
-      - [ ] GET /customers/custcode/{custcode}
+      - [x] GET /customers - returns all the customer
+      - [ ] GET /customers/{id}
     - [ ] For a stretch goal - add custom responses to the rest of the end points
   - [x] Add flyway data migration (and an additional one for some seed data as well)
   
